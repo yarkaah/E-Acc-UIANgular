@@ -9,9 +9,11 @@ import { ViewComponent } from './documents/view/view.component';
 import { LogsComponent } from './access-logs/logs/logs.component';
 import { OtpComponent } from './otp/otp/otp.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component:LoginComponent },
   { path: 'register', component:RegisterComponent },
   { path: 'upload', component:UploadComponent, canActivate:[AuthGuard] },

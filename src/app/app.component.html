@@ -1,5 +1,12 @@
-<nav>
+<!-- <nav>
   <a routerLink="/documents/upload">Upload</a> |
   <a routerLink="/documents/view">View</a>
 </nav>
+<router-outlet></router-outlet> -->
+<nav *ngIf="authService.isLoggedIn()" class="navbar">
+  <a routerLink="/documents">My Documents</a>
+  <a routerLink="/upload">Upload</a>
+  <button (click)="logout()">Logout</button>
+</nav>
+
 <router-outlet></router-outlet>

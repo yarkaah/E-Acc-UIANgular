@@ -10,11 +10,13 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogsComponent } from './access-logs/logs/logs.component';
 import { DocumentsModule } from './documents/documents.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogsComponent
+    LogsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

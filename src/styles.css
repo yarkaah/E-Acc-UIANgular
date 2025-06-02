@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+  background-color: #007bff;
+  padding: 10px;
+}
+.navbar a, .navbar button {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
