@@ -1,0 +1,8 @@
+<h2>My Documents</h2>
+<ul>
+  <li *ngFor="let doc of documents">
+    {{ doc.name }} - {{ doc.uploadedAt }}
+    <a [routerLink]="['/download', doc.id]">Download</a>
+    <a [routerLink]="['/grant-access', doc.id]">Grant Access</a>
+  </li>
+</ul>

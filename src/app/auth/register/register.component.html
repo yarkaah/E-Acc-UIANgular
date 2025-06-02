@@ -1,0 +1,12 @@
+<h2>Register</h2>
+<form (ngSubmit)="register()">
+    <input type="email" placeholder="Email" [(ngModel)]="user.email" name="email" required>
+    <input type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required>
+    <select  [(ngModel)]="user.role" name="role">
+        <option value="USER">User</option>
+        <option value="INSTITUTION">Institution</option>
+    </select>
+    <button type="submit">Register</button> 
+</form>
+<p *ngIf="error" style="color:red">{{ error }}</p>
+ 
