@@ -1,0 +1,41 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.sidebar {
+  width: 240px;
+  background-color: #205f9e;
+  color: #ecf0f1;
+  padding: 30px 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  display: block;
+  margin: 15px 0;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, padding-left 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: #194068;
+  padding-left: 10px;
+  border-left: 4px solid #3498db;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #f9f9f9;
+}

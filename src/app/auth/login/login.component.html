@@ -1,7 +1,46 @@
-<h2>Login</h2>
-<form (ngSubmit)="login()">
-    <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
-    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
-    <button type="submit">Login</button>
-</form>
-<p *ngIf="error" style="color:red">{{ error }}</p>
+<div class="login-container">
+  <!-- Logo or Title -->
+  <div class="login-header">
+    <img src="assets/logo.svg" alt="E-Account Logo" class="logo" />
+    <h1 class="title">E-Account</h1>
+    <p class="subtitle">Secure Document Management</p>
+  </div>
+
+  <h2>Login To Your Account</h2>
+
+  <form (ngSubmit)="onSubmit()" class="login-form">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Enter your password"
+        required
+      />
+    </div>
+
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+
+    <button type="submit" class="login-button">Login</button>
+  </form>
+
+  <p class="register-link">
+    Don't have an account? <a routerLink="/register">Register here</a>
+  </p>
+</div>

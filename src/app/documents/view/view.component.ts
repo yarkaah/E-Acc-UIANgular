@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DocumentService, DocumentDTO } from '../document.service';
+import { DocumentService, DocumentDTO } from '../../services/document.service';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({

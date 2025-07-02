@@ -1,12 +1,8 @@
-<!-- <nav>
-  <a routerLink="/documents/upload">Upload</a> |
-  <a routerLink="/documents/view">View</a>
-</nav>
-<router-outlet></router-outlet> -->
-<nav *ngIf="authService.isLoggedIn()" class="navbar">
-  <a routerLink="/documents">My Documents</a>
-  <a routerLink="/upload">Upload</a>
-  <button (click)="logout()">Logout</button>
-</nav>
+<!-- Top Navigation Bar -->
+<app-navbar *ngIf="isLoggedIn()"></app-navbar>
 
+<!-- Breadcrumb Navigation -->
+<app-breadcrumb *ngIf="isLoggedIn()"></app-breadcrumb>
+
+<!-- Main Routed Views -->
 <router-outlet></router-outlet>

@@ -1,0 +1,10 @@
+.breadcrumb-container {
+  font-size: 14px;
+  padding: 0.5rem 2rem;
+  background-color: #f8f9fa;
+  color: #555;
+}
+
+.crumb {
+  text-transform: capitalize;
+}

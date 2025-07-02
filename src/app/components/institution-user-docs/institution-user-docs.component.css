@@ -1,0 +1,31 @@
+.institution-docs-container {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.docs-card {
+  margin-top: 20px;
+}
+
+.empty-state, .error-message {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+.inst-upload-tag {
+  display: block;
+  color: #3f51b5;
+  font-size: 12px;
+  margin-top: 4px;
+}
+

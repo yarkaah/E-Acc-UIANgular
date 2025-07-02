@@ -1,0 +1,7 @@
+<nav class="breadcrumb-container" *ngIf="breadcrumbs.length">
+  <span *ngFor="let crumb of breadcrumbs; let last = last">
+    <span class="crumb">{{ crumb }}</span>
+    <span *ngIf="!last"> / </span>
+  </span>
+</nav>
+

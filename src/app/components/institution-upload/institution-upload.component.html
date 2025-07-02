@@ -1,0 +1,28 @@
+<!-- institution-upload.component.html -->
+<div class="upload-wrapper">
+  <h3>Upload Document for User</h3>
+
+  <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Select User Email</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="userEmail"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let user of filteredUsers | async" [value]="user.email">
+          {{ user.email }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <label for="file">Select Document</label>
+    <input type="file" id="file" (change)="onFileChange($event)" />
+
+    <button type="submit" [disabled]="uploadForm.invalid || !selectedFile">Upload</button>
+  </form>
+
+  <p *ngIf="message" class="message">{{ message }}</p>
+</div>

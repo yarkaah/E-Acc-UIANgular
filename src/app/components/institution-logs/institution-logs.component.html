@@ -1,0 +1,41 @@
+<div class="institution-logs-container">
+  <h2>View Access Logs by User</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Select User</mat-label>
+    <mat-select [(value)]="selectedUserId" (selectionChange)="onUserChange()">
+      <mat-option *ngFor="let user of users" [value]="user.id">
+        {{ user.email }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="loading" class="loading">Loading logs...</div>
+
+  <table *ngIf="logs.length > 0" class="logs-table mat-elevation-z8">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Document Name</th>
+        <th>Accessed By</th>
+        <th>Access Type</th>
+        <th>Access Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ log.documentName }}</td>
+        <td>{{ log.accessedBy }}</td>
+        <td>{{ log.accessType }}</td>
+        <td>{{ log.timestamp | date:'medium' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && logs.length === 0 && selectedUserId">
+    <p>No access logs found for this user.</p>
+  </div>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+</div>

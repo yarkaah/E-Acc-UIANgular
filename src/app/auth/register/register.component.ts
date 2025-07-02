@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
@@ -7,17 +7,22 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent  {
-  user = { email: '', password: '', role: 'USER'};
+export class RegisterComponent {
+  user = {
+    name: '',        
+    email: '',
+    password: '',
+    role: ''
+  };
+  
   error = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  register(){
+  onRegister() {
     this.authService.register(this.user).subscribe({
       next: () => this.router.navigate(['/login']),
       error: err => this.error = 'Registration failed'
     });
   }
-
 }
